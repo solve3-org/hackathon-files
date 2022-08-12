@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+  background-color: #0d060dff;
+  min-height: 100vh;
+}
+
+.Container {
+  background-color: #0d060dff;
+  min-height: 100vh;
+  color: rgb(197, 197, 197);
+}
+
+
+.Wrapper {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: transparent;
+  /* z-index: 1; */
+  
+  padding-left: 25px;
+}
+
+.Box {
+  position: relative;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-height: fit-content;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.Content {
+  background-color: rgba(22, 10, 22, 1);
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 250px;
+  margin-top: 50px;
+  -webkit-box-shadow: 0px 0px 5px 0px #FFFFFF1c; 
+box-shadow: 0px 0px 5px 0px #ffffff1c;
+}
+
+.Center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./root/header'); %>
+</head>
+
+<body class="container center" id="solve3-popup-container">
+
+  <main>
+    <!-- The Modal -->
+    <div id="solve3-check-modal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content center">
+        <div id="solve3-modal-content">
+          <p class="loading result"><span>&bull;</span><span>&bull;</span><span>&bull;</span></p>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="box center">
+      <div class="heading center">
+        <div class="column c-left">
+          <a href="https://solve3.org" target="_blank">
+            <img src='<%- logo %>' alt="solve3_logo" style="height:40px;">
+          </a>
+        </div>
+        <div class="column c-right">
+          <div class="solve3-name">
+            <a href="https://solve3.org" target="_blank">SOLVE3</a>
+          </div>
+          <div class="solve3-title">
+            <a href="https://solve3.org" target="_blank">WEB3 CAPTCHA</a>
+          </div>
+        </div>
+      </div>
+      <div class="captcha-wrapper center">
+        <div class="captcha-heading center">
+          select the correct emoji below
+        </div>
+        <div class="ascii-wrapper">
+          <%- captcha %>
+            <div id="secs">(15s)</div>
+        </div>
+        <div class="solve3-form center">
+          <div class="solve3-solution center row" id="solve3-solution">
+            <%- emojis %>
+          </div>
+          <div class="row">
+            <div class="c-80">
+              <div>
+                <a href='<%- twitterUrl %>' target="_blank">Follow us <img class="icon" src='<%- twitterLogo %>'
+                    alt="twitter_logo" style="height:14px;"></a>
+              </div>
+              <div class="button center text-sm">♥ SOLVE3.ORG</div>
+            </div>
+            <div class="c-20 center" id="rld">
+              <div class="button text-xl" onclick="onClickHandlerReload()">&#x27F3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./root/header'); %>
+</head>
+
+<body class="solve3-center" id="solve3-popup-container">
+
+  <main>
+
+    <div id="solve3-check-modal" class="solve3-check-modal">
+      <div class="solve3-check-modal-content solve3-center">
+        <div id="solve3-modal-content">
+          <p class="solve3-loading solve3-result"><span>&bull;</span><span>&bull;</span><span>&bull;</span></p>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="solve3-box solve3-center">
+      <div class="solve3-close" onclick="onClickHandlerClose()">&#215;</div>
+      <div class="solve3-heading solve3-center">
+        <div class="solve3-c-left">
+          <a href="https://solve3.org" target="_blank">
+            <img src='<%- logo %>' alt="solve3_logo" style="height:40px;">
+          </a>
+        </div>
+        <div class="solve3-c-right">
+          <div class="solve3-name">
+            <a href="https://solve3.org" target="_blank">SOLVE3</a>
+          </div>
+          <div class="solve3-title">
+            <a href="https://solve3.org" target="_blank">WEB3 CAPTCHA</a>
+          </div>
+        </div>
+      </div>
+      <div class="solve3-captcha-wrapper solve3-center">
+        <div class="solve3-captcha-heading solve3-center">
+          select the correct emoji below
+        </div>
+        <div class="solve3-ascii-wrapper">
+          <%- captcha %>
+            <div id="solve3-secs">(15s)</div>
+        </div>
+        <div class="solve3-form solve3-center">
+          <div class="solve3-solution solve3-center solve3-row" id="solve3-solution">
+            <%- emojis %>
+          </div>
+          <div class="solve3-row solve3-footer">
+            <div class="solve3-c-80">
+              <div>
+                <a href='<%- twitterUrl %>' target="_blank">Follow us <img class="solve3-icon" src='<%- twitterLogo %>'
+                    alt="twitter_logo" style="height:14px;"></a>
+              </div>
+              <div class="solve3-button solve3-center solve3-text-sm">♥ SOLVE3.ORG</div>
+            </div>
+            <div class="solve3-c-20 solve3-center" id="rld">
+              <div class="solve3-button solve3-text-xl" onclick="onClickHandlerReload()">&#x27F3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+</body>
+</html>
