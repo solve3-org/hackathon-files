@@ -7,7 +7,7 @@ import { FaCheck } from 'react-icons/fa'
 import { ImCross } from 'react-icons/im'
 import useWindowSize from 'react-use/lib/useWindowSize'
 
-const solve3 = require("@solve3/modal");
+import solve3 from '../../module/Solve3Modal';
 
 const override = css`
   display: block;
@@ -75,7 +75,7 @@ const TransactionButton = (props) => {
     const handshake = await solve3.init({
       account: account,
       contract: props.address,
-      network: "rinkeby"
+      network: "mumbai"
     })
 
     web3.eth.sign(handshake, account).then((msg) => {

@@ -51,7 +51,7 @@ const Home = () => {
                     <div style={{marginTop: "20px"}}>
                       {/* <button onClick={() => { mint() }}>mint</button> */}
                       <TransactionButton
-                        address={"0xa0ff73D974772C1c242F81262214521f40dAcE5e"}
+                        address={"0x90e3e15568C1a366c48a775d7cd45db705714af7"}
                         abi={abi}
                         method={'mint'}
                         args={[]}

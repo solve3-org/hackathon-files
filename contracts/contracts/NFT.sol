@@ -8,7 +8,7 @@ import "@solve3/contracts/Solve3Verify.sol";
 contract Solve3NFT is
     ERC721Enumerable,
     Ownable,
-    Solve3Verify // contract name to yours
+    Solve3Verify
 {
     using Strings for uint256;
 
