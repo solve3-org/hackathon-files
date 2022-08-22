@@ -8,12 +8,13 @@ interface ISolve3Verifier {
         address account;
         uint256 timestamp;
         uint256 nonce;
+        bytes data;
         uint8 v;
         bytes32 r;
         bytes32 s;
     }
     
-    function initialize(address _signer) external;
+    function initialize(address _signer, address _token) external;
 
     function verifyMessage(Message memory _msg) external returns (bool);
 

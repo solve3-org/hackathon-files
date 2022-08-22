@@ -14,14 +14,11 @@ String.prototype.pad = function (size) {
 const abiEncodeS3Values = async (obj) => {
   const versionHash = ethers.utils.id(obj.version);
 
-  const encoded =
-    versionHash +
-    (obj.account).replace('0x', '').pad(64) +
-    (obj.contract).replace('0x', '').pad(64) +
-    parseInt(obj.timestamp).toString(16).pad(64) +
-    parseInt(obj.nonce).toString(16).pad(64)
+  let result = (new ethers.utils.AbiCoder).encode(
+    ['bytes32', 'address', 'address', 'uint256', 'uint256', 'bytes'],
+    [versionHash, obj.account, obj.contract, obj.timestamp, obj.nonce, obj.data]);
 
-  return encoded.toLowerCase();
+  return result.toLowerCase();
 }
 
 const keccak256 = async (string) => {
@@ -35,13 +32,14 @@ const signMsg = async (signer, msg) => {
   return signature;
 }
 
-const createSigStruct = async (signer, msg, account, timestamp, nonce) => {
+const createSigStruct = async (signer, msg, account, timestamp, nonce, data) => {
   const signedMsg = await signMsg(signer, msg);
   let sig = ethers.utils.splitSignature(signedMsg);
   let result = {
     account: account,
     timestamp: timestamp,
     nonce: nonce,
+    data: data,
     v: sig.v,
     r: sig.r,
     s: sig.s,
